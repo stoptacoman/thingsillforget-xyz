@@ -1,0 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,700;0,900;1,400;1,900&display=swap");
+
+:root {
+  --backgroundColour: hsl(209, 70%, 13%);
+  --backgroundColour2: hsl(209, 70%, 30%);
+  --fontColour: hsl(97, 13%, 80%);
+}
+
+* {
+  font-family: "Rubik", sans-serif;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background: linear-gradient(var(--backgroundColour2), var(--backgroundColour))
+    fixed;
+  color: var(--fontColour);
+}

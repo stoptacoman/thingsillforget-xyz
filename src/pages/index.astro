@@ -1,5 +1,19 @@
+---
+import SiteHead from '../components/SiteHead.astro';
+import SiteNav from '../components/SiteNav.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+
+const title = "Things I'll Forget | A personal blog"
+const description = "A personal blog where I document all the things I've had to look up more than once"
+---
+
 <html>
-  <body>
-    <h1>things i'll forget</h1>
-  </body>
+<SiteHead title={ title } description={ description } />
+<body>
+  <SiteNav />
+  <main>
+    <h1>Index</h1>
+  </main>
+  <SiteFooter />
+</body>
 </html>
