@@ -7,16 +7,18 @@ const { content } = Astro.props;
 ---
 
 <html lang="en">
-<SiteHead title={ content.title } description={ content.description } />
+<SiteHead title={ content.title + " | thingsillforget.xyz" } description={ content.description } />
 <body>
   <SiteNav />
   <main>
     <section class="blog-post">
-      <h1>{ content.title }</h1>
-      <h3>{ content.subtitle }</h3>
+      <h2>{ content.title }</h2>
+      <p class="subtitle">{ content.subtitle }</p>
+      <hr>
       <article>
         <slot />
       </article>
+      <hr>
       <footer>
         <a href="/">Back to posts</a>
       </footer>
@@ -25,3 +27,25 @@ const { content } = Astro.props;
   <SiteFooter />
 </body>
 </html>
+
+<style>
+  .blog-post {
+    width: 85ch;
+  }
+  h2 {
+    font-size: 28px;
+  }
+  article {    
+    line-height: 1.75;
+    padding: 0 .5em;
+  }
+  .subtitle {
+    font-size: 20px;
+    line-height: 1.5;
+    font-style: italic;
+  }
+  a {
+    text-decoration: none;
+    color: var(--linkColour);
+  }
+</style>

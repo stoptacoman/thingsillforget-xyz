@@ -3,7 +3,8 @@
 :root {
   --backgroundColour: hsl(209, 70%, 13%);
   --backgroundColour2: hsl(209, 70%, 30%);
-  --fontColour: hsl(97, 13%, 80%);
+  --fontColour: hsl(38, 8%, 80%);
+  --linkColour: hsl(358, 100%, 67%);
 }
 
 * {
@@ -20,4 +21,8 @@ body {
   background: linear-gradient(var(--backgroundColour2), var(--backgroundColour))
     fixed;
   color: var(--fontColour);
+}
+
+main {
+  margin: 2em 15%;
 }

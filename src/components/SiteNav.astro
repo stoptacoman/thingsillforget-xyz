@@ -4,8 +4,40 @@
 </div>
 <nav>
   <ul>
-    <li><a href="/about">About</a></li>
-    <li><a href="/links">Links</a></li>
+    <li><a href="/about">about</a></li>
+    <li><a href="/links">links</a></li>
   </ul>
 </nav>
 </header>
+
+<style>
+  header {
+    display: flex;
+    column-gap: 4em;
+    align-items: baseline;
+    margin: 2em 15%;
+  }
+  a {
+    color: var(--fontColour);
+    text-decoration: none;
+  }
+  ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    column-gap: 2em;
+  }
+  h1 {
+    margin: 0;
+    font-weight: 900;
+    font-size: 48px;
+    font-style: italic;
+  }
+  li > a {
+    font-size: 22px;
+    font-variant: small-caps;
+    font-weight: bold;    
+  }
+  
+</style>

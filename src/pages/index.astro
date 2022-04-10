@@ -8,6 +8,7 @@ const title = "Things I'll Forget | A personal blog"
 const description = "A personal blog where I document all the things I've had to look up more than once"
 
 let allPosts = await Astro.glob('./posts/*.md');
+allPosts.sort((a, b) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf());
 ---
 
 <html>

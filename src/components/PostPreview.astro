@@ -9,9 +9,44 @@ function formatDate(date) {
   <article>
     <time>{ formatDate(frontmatter.date) }</time>    
     <h2>{ frontmatter.title }</h2>
-    <p>{ frontmatter.subtitle }</p>
+    <p class="subtitle">{ frontmatter.subtitle }</p>
     <footer>    
-      <p class="category">in {frontmatter.category}</p>
+      <p class="category">in <em>{frontmatter.category}</em></p>
       <a href={post.url}>Read</a>
     </footer>
   </article>
+
+<style>
+  article {    
+    padding: 1.25em;
+    width: 85ch;
+    margin-bottom: 2em;
+    border-radius: 10px;    
+    box-shadow: 0px 1px 5px var(--backgroundColour);
+  }
+  h2 {
+    font-size: 32px;
+    font-weight: bold;    
+  }
+  a {
+    color: var(--linkColour);
+    font-size: 18px;
+    font-weight: bold;
+  }
+  time {
+    font-weight: 300;
+  }
+  .subtitle {
+    font-size: 18px;
+    line-height: 1.75;
+  }
+  .category {
+    font-weight: 300;
+  }
+  footer {    
+    display: flex;
+    justify-content: flex-end;
+    align-items: baseline;
+    column-gap: 2em;
+  }
+</style>
