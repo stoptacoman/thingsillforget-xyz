@@ -2,9 +2,12 @@
 import SiteHead from '../components/SiteHead.astro';
 import SiteNav from '../components/SiteNav.astro';
 import SiteFooter from '../components/SiteFooter.astro';
+import PostPreview from '../components/PostPreview.astro';
 
 const title = "Things I'll Forget | A personal blog"
 const description = "A personal blog where I document all the things I've had to look up more than once"
+
+let allPosts = await Astro.glob('./posts/*.md');
 ---
 
 <html>
@@ -12,7 +15,7 @@ const description = "A personal blog where I document all the things I've had to
 <body>
   <SiteNav />
   <main>
-    <h1>Index</h1>
+    {allPosts.map((post) => <PostPreview post={post} />)}
   </main>
   <SiteFooter />
 </body>

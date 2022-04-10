@@ -1,0 +1,27 @@
+---
+import SiteHead from '../components/SiteHead.astro';
+import SiteNav from '../components/SiteNav.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+
+const { content } = Astro.props;
+---
+
+<html lang="en">
+<SiteHead title={ content.title } description={ content.description } />
+<body>
+  <SiteNav />
+  <main>
+    <section class="blog-post">
+      <h1>{ content.title }</h1>
+      <h3>{ content.subtitle }</h3>
+      <article>
+        <slot />
+      </article>
+      <footer>
+        <a href="/">Back to posts</a>
+      </footer>
+    </section>
+  </main>
+  <SiteFooter />
+</body>
+</html>
