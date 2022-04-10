@@ -3,6 +3,7 @@ import SiteHead from '../components/SiteHead.astro';
 import SiteNav from '../components/SiteNav.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import PostPreview from '../components/PostPreview.astro';
+import Pagination from '../components/Pagination.astro';
 
 const title = "Things I'll Forget | A personal blog"
 const description = "A personal blog where I document all the things I've had to look up more than once"
@@ -11,12 +12,13 @@ let allPosts = await Astro.glob('./posts/*.md');
 allPosts.sort((a, b) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf());
 ---
 
-<html>
+<html lang="en">
 <SiteHead title={ title } description={ description } />
 <body>
   <SiteNav />
   <main>
     {allPosts.map((post) => <PostPreview post={post} />)}
+    <Pagination prevUrl='/posts' nextUrl='/posts/2' />
   </main>
   <SiteFooter />
 </body>

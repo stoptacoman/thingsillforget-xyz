@@ -1,0 +1,23 @@
+---
+const { prevUrl, nextUrl } = Astro.props;
+---
+
+  <section class="page-nav">
+    <nav>
+      <a href={ prevUrl || '#' } class="prev">prev</a>
+      <a href={ nextUrl || '#' } class="next">next</a>
+    </nav>
+  </section>
+
+<style>
+  nav {
+    width: 85ch;
+    display: flex;
+    justify-content: space-between;
+  }
+  a {
+    color: var(--linkColour);
+    font-variant: small-caps;
+    font-size: 18px;
+  }
+</style>

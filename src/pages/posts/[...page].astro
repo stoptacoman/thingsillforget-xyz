@@ -1,0 +1,46 @@
+---
+import SiteHead from '../../components/SiteHead.astro';
+import SiteNav from '../../components/SiteNav.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import PostPreview from '../../components/PostPreview.astro';
+import Pagination from '../../components/Pagination.astro';
+
+export async function getStaticPaths({ paginate }) {
+  const allPosts = await Astro.glob('./*.md');
+  const sortedPosts = allPosts.sort((a, b) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf());
+  return paginate(sortedPosts, { pageSize: 5 });
+}
+
+const title = 'All the posts | thingsillforget.xyz'
+const description = 'All of the posts are here'
+const { page } = Astro.props;
+---
+  <html lang="en">
+  <SiteHead title={ title } description={description} />
+  <body>
+    <SiteNav />
+    <main>
+      <header>
+        <h2>All posts</h2>
+        <small>{ page.start + 1 }-{ page.end + 1 } of { page.total }</small>
+      </header>
+      { page.data.map((post) => <PostPreview post={ post } />)}
+      <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
+    </main>
+    <SiteFooter />
+  </body>
+  </html>
+
+<style>
+  header {
+    width: 85ch;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2em;
+  }
+  header > h2 {
+    font-size: 28px;
+  }
+</style>

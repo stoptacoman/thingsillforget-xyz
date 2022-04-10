@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,700;0,900;1,400;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,900&display=swap");
 
 :root {
   --backgroundColour: hsl(209, 70%, 13%);
@@ -21,8 +21,11 @@ body {
   background: linear-gradient(var(--backgroundColour2), var(--backgroundColour))
     fixed;
   color: var(--fontColour);
+  display: flex;
+  flex-direction: column;
 }
 
 main {
   margin: 2em 15%;
+  flex: 1;
 }

@@ -20,7 +20,7 @@ const { content } = Astro.props;
       </article>
       <hr>
       <footer>
-        <a href="/">Back to posts</a>
+        <a href="/posts">Back to posts</a>
       </footer>
     </section>
   </main>
@@ -37,8 +37,8 @@ const { content } = Astro.props;
   }
   article {    
     line-height: 1.75;
-    padding: 0 .5em;
-  }
+    padding: 0 .5em;    
+  }  
   .subtitle {
     font-size: 20px;
     line-height: 1.5;
@@ -47,5 +47,10 @@ const { content } = Astro.props;
   a {
     text-decoration: none;
     color: var(--linkColour);
+  }
+  hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
   }
 </style>
