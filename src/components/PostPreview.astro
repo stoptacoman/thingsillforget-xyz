@@ -10,8 +10,7 @@ function formatDate(date) {
     <h2>{ frontmatter.title }</h2>
     <p class="subtitle">{ frontmatter.subtitle }</p>
     <footer>
-      <p>published on <time>{ formatDate(frontmatter.date) }</time></p>
-      <p class="category">in <em>{frontmatter.category}</em></p>
+      <p>published on <time>{ formatDate(frontmatter.date) }</time> in <em>{frontmatter.category}</em></p>
       <a href={post.url}>Read</a>
     </footer>
   </article>
