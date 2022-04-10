@@ -1,9 +1,24 @@
 <footer>
-  <h3>site footer</h3>
+  <section>
+    <p>thingsillforget.xyz &copy; { new Date().getFullYear() }</p> 
+    <p>Made with <span class="heart">❤</span> and <a href="https://astro.build" target="_blank"><img src="/logomark-dark.svg" alt="Astro logo" height="20" width="20"></a> in Gatineau, QC</p>
+    <p>Hosted with <a href="https://netlify.com"><img class="netlify" src="/logomark-netlify.svg" alt="Netlify Logo" width="20" height="20"></a>. Repository at <a href="https://github.com/stoptacoman/thingsillforget-xyz"><img src="/GitHub-Mark-Light-32px.png" alt="GitHub logo" height="20" width="20"></a></p>
+  </section>
 </footer>
 
 <style>
   footer {
     margin: 2em 15%;
   }
+  section {
+    width: 85ch;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .heart {
+    color: var(--linkColour);   
+  }
+  
 </style>
